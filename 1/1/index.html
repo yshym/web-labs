@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>Lab 1/1</title>
+    </head>
+    <body>
+        <!-- article -->
+        <h2>Article:</h2>
+        <article>
+            <h2>Google Chrome</h2>
+            <p>
+                Google Chrome is a web browser developed by Google, released in
+                2008. Chrome is the world's most popular web browser today!
+            </p>
+        </article>
+        <hr />
+
+        <!-- aside -->
+        <h2>Aside:</h2>
+        <p>
+            My family and I visited The Epcot center this summer. The weather
+            was nice, and Epcot was amazing! I had a great summer together with
+            my family!
+        </p>
+
+        <aside>
+            <h4>Epcot Center</h4>
+            <p>
+                Epcot is a theme park at Walt Disney World Resort featuring
+                exciting attractions, international pavilions, award-winning
+                fireworks and seasonal special events.
+            </p>
+        </aside>
+        <hr />
+
+        <!-- audio and source -->
+        <h2>Audio and Source:</h2>
+        <audio controls>
+            <source src="https://www.w3schools.com/TAGS/horse.mp3" type="audio/mpeg" />
+            Your browser does not support the audio tag.
+        </audio>
+        <hr />
+
+        <!-- bdi -->
+        <h2>Bdi:</h2>
+        <ul>
+            <li>User <bdi>hrefs</bdi>: 60 points</li>
+            <li>User <bdi>jdoe</bdi>: 80 points</li>
+            <li>User <bdi>إيان</bdi>: 90 points</li>
+        </ul>
+        <hr />
+
+        <!-- canvas -->
+        <h2>Canvas:</h2>
+        <canvas id="myCanvas"></canvas>
+
+        <script>
+            let canvas = document.getElementById("myCanvas");
+            let ctx = canvas.getContext("2d");
+            ctx.fillStyle = "#FF0000";
+            ctx.fillRect(0, 0, 80, 80);
+        </script>
+        <hr />
+
+        <!-- datalist -->
+        <h2>Datalist:</h2>
+        <input list="browsers" />
+
+        <datalist id="browsers">
+            <option value="Internet Explorer"> </option>
+            <option value="Firefox"> </option>
+            <option value="Chrome"> </option>
+            <option value="Opera"> </option>
+            <option value="Safari"> </option>
+        </datalist>
+        <hr />
+
+        <!-- dialog -->
+        <h2>Dialog:</h2>
+        <table>
+            <tr>
+                <th>
+                    January <dialog open>This is an open dialog window</dialog>
+                </th>
+                <th>February</th>
+                <th>March</th>
+            </tr>
+            <tr>
+                <td>31</td>
+                <td>28</td>
+                <td>31</td>
+            </tr>
+        </table>
+        <hr />
+
+        <!-- embed -->
+        <h2>Embed:</h2>
+        <embed src="https://www.w3schools.com/tags/helloworld.swf" />
+        <hr />
+
+        <!-- figure and figcaption -->
+        <figure>
+            <img src="https://www.w3schools.com/tags/pic_trulli.jpg" alt="Trulli" style="width: 100%;" />
+            <figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption>
+        </figure>
+        <hr />
+
+        <!-- footer -->
+        <h2>Footer</h2>
+        <footer>
+            <p>Posted by: Hege Refsnes</p>
+            <p>
+                Contact information:
+                <a href="mailto:someone@example.com"> someone@example.com</a>.
+            </p>
+        </footer>
+        <hr />
+
+        <!-- header -->
+        <h2>Article:</h2>
+        <article>
+            <header>
+                <h1>Most important heading here</h1>
+                <h2>Less important heading here</h2>
+                <p>Some additional information here</p>
+            </header>
+            <p>Lorem Ipsum dolor set amet....</p>
+        </article>
+        <hr />
+
+        <!-- main -->
+        <h2>Main:</h2>
+        <main>
+            <h2>Web Browsers</h2>
+            <p>Chrome, Firefox, and Edge are the most used browsers today.</p>
+
+            <article>
+                <h3>Google Chrome</h3>
+                <p>
+                    Chrome is a free, open-source web browser developed by
+                    Google, released in 2008.
+                </p>
+            </article>
+
+            <article>
+                <h3>Microsoft Edge</h3>
+                <p>
+                    Edge is a free web browser from Microsoft, released in 1995.
+                </p>
+            </article>
+
+            <article>
+                <h3>Mozilla Firefox</h3>
+                <p>
+                    Firefox is a free, open-source web browser from Mozilla,
+                    released in 2004.
+                </p>
+            </article>
+        </main>
+        <hr />
+
+        <!-- mark -->
+        <h2>Mark:</h2>
+        <p>Do not forget to buy <mark>milk</mark> today.</p>
+        <hr />
+
+        <!-- meter -->
+        <h2>Meter:</h2>
+        <label for="disk_c">Disk usage C:</label>
+        <meter id="disk_c" value="2" min="0" max="10">2 out of 10</meter><br />
+        <hr />
+
+        <!-- nav -->
+        <h2>Nav:</h2>
+        <nav>
+            <a href="/html/">HTML</a> | <a href="/css/">CSS</a> |
+            <a href="/js/">JavaScript</a> |
+            <a href="/jquery/">jQuery</a>
+        </nav>
+        <hr />
+
+        <!-- output -->
+        <h2>Output:</h2>
+        <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+            0 <input type="range" id="a" value="50" />100 +<input
+                type="number"
+                id="b"
+                value="50"
+            />
+            =<output name="x" for="a b"></output>
+        </form>
+        <hr />
+
+        <!-- picture -->
+        <h2>Picture:</h2>
+        <picture>
+            <source media="(min-width: 650px)" srcset="https://www.w3schools.com/TAGS/img_pink_flowers.jpg" />
+            <source media="(min-width: 465px)" srcset="https://www.w3schools.com/TAGS/img_white_flower.jpg" />
+            <img
+                src="https://www.w3schools.com/TAGS/img_orange_flowers.jpg"
+                alt="Flowers"
+                style="width: auto;"
+            />
+        </picture>
+        <hr />
+
+        <!-- progress -->
+        <h2>Progress:</h2>
+        <label for="file">Downloading progress:</label>
+        <progress id="file" value="32" max="100"> 32% </progress>
+        <hr />
+
+        <!-- section -->
+        <h2>Section:</h2>
+        <section>
+            <h2>WWF</h2>
+            <p>The World Wide Fund for Nature (WWF) is....</p>
+        </section>
+        <hr />
+
+        <!-- summary -->
+        <h2>Summary</h2>
+        <details>
+            <summary>Copyright 1999-2014.</summary>
+            <p>- by Refsnes Data. All Rights Reserved.</p>
+            <p>
+                All content and graphics on this web site are the property of
+                the company Refsnes Data.
+            </p>
+        </details>
+        <hr />
+
+        <!-- template -->
+        <h2>Template:</h2>
+        <template>
+            <h2>Flower</h2>
+            <img src="img_white_flower.jpg" />
+        </template>
+        <hr />
+
+        <!-- time -->
+        <h2>Time:</h2>
+        <p>We open at <time>10:00</time> every morning.</p>
+
+        <p>
+            I have a date on
+            <time datetime="2008-02-14 20:00">Valentines day</time>.
+        </p>
+        <hr />
+
+        <!-- video and track -->
+        <h2>Video and track:</h2>
+        <video width="320" height="240" controls>
+            <source src="https://www.w3schools.com/TAGS/movie.mp4" type="video/mp4" />
+            <source src="https://www.w3schools.com/TAGS/movie.ogg" type="video/ogg" />
+            <track
+                src="subtitles_en.vtt"
+                kind="subtitles"
+                srclang="en"
+                label="English"
+            />
+            <track
+                src="subtitles_no.vtt"
+                kind="subtitles"
+                srclang="no"
+                label="Norwegian"
+            />
+        </video>
+        <hr />
+
+        <!-- wbr -->
+        <h2>Wbr:</h2>
+        <p>
+            To learn AJAX, you must be familiar with the XML<wbr />Http<wbr />Request
+            Object.
+        </p>
+        <br />
+    </body>
+</html>
