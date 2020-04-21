@@ -4,3 +4,6 @@ build/
 
 # sass
 .sass-cache/
+
+# logs
+.log/
