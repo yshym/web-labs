@@ -1,0 +1,12 @@
+img {
+    border: 3px solid red;
+    max-height: 400px;
+}
+
+div.input-group span {
+    width: 200px;
+}
+
+.invalid {
+    border-color: red;
+}
