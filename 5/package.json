@@ -1,0 +1,17 @@
+{
+  "name": "5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server --no-browser"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "live-server": "^1.2.1",
+    "typescript": "^3.8.3",
+    "typescript-language-server": "^0.4.0"
+  }
+}
