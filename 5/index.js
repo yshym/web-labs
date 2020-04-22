@@ -54,7 +54,7 @@ window.onscroll = function () {
         fetchAvatars(
             25,
             () => document.body.appendChild(loadingH1),
-            () => document.body.removeChild(loadingH1),
+            () => document.body.removeChild(loadingH1)
         ).then((avatars) => {
             addAvatars(
                 avatars.map((avatar) => avatar.large),

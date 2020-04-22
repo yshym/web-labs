@@ -27,10 +27,13 @@ function httpGet(url, onprogress, onload) {
 }
 
 export function fetchAvatars(n, onprogress, onload) {
-    return httpGet(`https://randomuser.me/api/?results=${n}`, onprogress, onload)
-        .then((response) => {
-            let users = JSON.parse(response).results;
+    return httpGet(
+        `https://randomuser.me/api/?results=${n}`,
+        onprogress,
+        onload
+    ).then((response) => {
+        let users = JSON.parse(response).results;
 
-            return users.map((user) => user.picture);
-        });
+        return users.map((user) => user.picture);
+    });
 }
