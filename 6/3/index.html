@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Lab 6/3</title>
+
+        <link rel="stylesheet" href="index.css" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="timer">
+                <div id="time" class="screen">00:00</div>
+                <div class="buttons">
+                    <button id="go-stop">GO</button>
+                    <button id="reset">RESET</button>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script
+        src="https://code.jquery.com/jquery-3.5.0.min.js"
+        integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
+        crossorigin="anonymous"
+    ></script>
+    <script>
+        function pad(n, width, z) {
+            z = z || "0";
+            n = n + "";
+            return n.length >= width
+                ? n
+                : new Array(width - n.length + 1).join(z) + n;
+        }
+
+        function formatTime(seconds) {
+            let s = seconds % 60;
+            let m = (seconds - s) / 60;
+
+            return `${pad(m, 2)}:${pad(s, 2)}`;
+        }
+
+        $(document).ready(function () {
+            let timer;
+            let seconds = 0;
+            let active = false;
+
+            $("#go-stop").click(function () {
+                if (active) {
+                    clearInterval(timer);
+                    active = false;
+                    $(this).text("GO");
+                } else {
+                    timer = setInterval(() => {
+                        seconds = seconds + 1;
+                        $("#time").text(formatTime(seconds));
+                    }, 1000);
+                    active = true;
+                    $(this).text("STOP");
+                }
+            });
+
+            $("#reset").click(function () {
+                clearInterval(timer);
+                active = false;
+                seconds = 0;
+                $("#time").text(formatTime(seconds));
+            });
+        });
+    </script>
+</html>
