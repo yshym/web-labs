@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Document</title>
+
+        <style type="text/css">
+            .content-center {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="content-center">
+            <form method="POST" action="">
+                <h4>Send message:</h4>
+
+                <label for="email">Email</label>
+                <br />
+                <input type="email" name="email" value="" />
+                <br />
+                <br />
+
+                <label for="name">Name</label>
+                <br />
+                <input type="text" name="name" value="" />
+                <br />
+                <br />
+
+                <label for="message">Message</label>
+                <br />
+                <input type="text" name="message" value="" />
+                <br />
+                <br />
+
+                <button type="submit">Submit</button>
+            </form>
+            <br />
+            <textarea id="response" rows="20" cols="50"></textarea>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("form").on("submit", (e) => {
+                    e.preventDefault();
+
+                    $.ajax({
+                        type: "POST",
+                        url: "/",
+                        data: JSON.stringify($("form").serializeArray()),
+                        success: (data) =>
+                            $("#response").text(
+                                JSON.stringify(data, null, "  ")
+                            ),
+                        contentType: "application/json",
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
