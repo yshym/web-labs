@@ -20,11 +20,7 @@ class MainPage(webapp.RequestHandler):
 application = webapp.WSGIApplication([('.*', MainPage)], debug=False)
 
 
-def main():
+if __name__ == '__main__':
     from paste import httpserver
 
     httpserver.serve(application, host='127.0.0.1', port='8080')
-
-
-if __name__ == '__main__':
-    main()
