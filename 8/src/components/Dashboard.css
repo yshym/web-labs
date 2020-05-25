@@ -1,0 +1,13 @@
+.days {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.day {
+    display: flex;
+    flex-direction: column;
+    margin: 4% 0 4% 0;
+    flex: 0 0 30%;
+}
