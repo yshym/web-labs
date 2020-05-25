@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { hot } from "react-hot-loader";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Cookies from "js-cookie";
+import Nav from "./Nav.js";
 import LoginForm from "./LoginForm.js";
 import Dashboard from "./Dashboard.js";
 import "./App.css";
@@ -16,7 +17,6 @@ class App extends Component {
                     password: "yevhen",
                 },
             ],
-            username: null,
         };
     }
 
@@ -24,32 +24,21 @@ class App extends Component {
         this.setUsernameFromCookies();
     }
 
-    setUsernameFromCookies() {
+    setUsernameFromCookies = () => {
         this.setState({ username: Cookies.get("username") });
-    }
+    };
 
-    handleLogout() {
-        Cookies.remove("username");
-    }
+    handleLogout = () => {
+        this.setState({ username: null });
+    };
 
     render() {
         let username = this.state.username;
 
         return (
             <Router>
-                <div className="d-flex justify-content-between">
-                    {username ? (
-                        <>
-                            <span>{username}</span>
-                            <a href="" onClick={this.handleLogout}>
-                                Log out
-                            </a>
-                        </>
-                    ) : (
-                        <span>You are not logged in</span>
-                    )}
-                </div>
-                <hr />
+                <Nav username={username} onLogout={this.handleLogout} />
+                <br/>
 
                 <Switch>
                     <Route path="/dashboard">
