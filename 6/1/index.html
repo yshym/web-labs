@@ -10,29 +10,44 @@
                 flex-direction: column;
                 align-items: center;
             }
+
+            .input-error {
+                visibility: hidden;
+            }
+
+            input:not(:placeholder-shown):invalid + .input-error {
+                visibility: visible;
+                color: red;
+            }
+
+            .message-form {
+                display: flex;
+                flex-direction: column;
+            }
         </style>
     </head>
     <body>
         <div class="content-center">
-            <form method="POST" action="">
+            <form class="message-form" method="POST" action="">
                 <h4>Send message:</h4>
 
                 <label for="email">Email</label>
-                <br />
-                <input type="email" name="email" value="" />
-                <br />
+                <input type="email" name="email" placeholder="Email" />
+                <span id="email-error" class="input-error">Invalid email</span>
                 <br />
 
                 <label for="name">Name</label>
-                <br />
-                <input type="text" name="name" value="" />
-                <br />
+                <input type="text" name="name" placeholder="Name" pattern="[a-zA-Z]+" />
+                <span
+                    id="name-error"
+                    class="input-error">
+                    Name should contain only latin letters
+                </span>
                 <br />
 
                 <label for="message">Message</label>
-                <br />
-                <input type="text" name="message" value="" />
-                <br />
+                <input type="text" name="message" placeholder="Message" />
+                <span id="message-error" class="input-error">Invalid message</span>
                 <br />
 
                 <button type="submit">Submit</button>
